@@ -11,13 +11,15 @@
         android:layout_width="327dp"
         android:layout_height="296dp"
         android:layout_marginTop="50dp"
+        android:clipToPadding="false"
+        android:padding="4dp"
         app:layoutManager="GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:spanCount="4"
+        tools:listitem="@layout/layout_recycler_view"></androidx.recyclerview.widget.RecyclerView>
 
     <TextView
         android:id="@+id/textView"

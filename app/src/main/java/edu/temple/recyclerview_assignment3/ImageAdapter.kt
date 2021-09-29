@@ -18,20 +18,24 @@ class ImageAdapter(_context: Context, _imageObjects : Array<ImageObject>) : Recy
         val _imageView = _itemView
     }
 
-    val context = _context
-    val imageObjects = _imageObjects
-    val inflator  = LayoutInflater.from(context)
+    private val context = _context
+    private val imageObjects = _imageObjects
+    private val inflater  = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        TODO("Not yet implemented")
+        val contextNew = context
+        val inflaterNew = inflater
+        val flower = inflaterNew.inflate(R.layout.recycler_view_layout, parent, false)
+
+        return ImageViewHolder(flower as ImageView)
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val flower : ImageObject = imageObjects[position]
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return imageObjects.size
     }
 
 }

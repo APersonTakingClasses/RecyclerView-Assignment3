@@ -2,6 +2,7 @@ package edu.temple.recyclerview_assignment3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ImageActivity : AppCompatActivity() {
@@ -9,9 +10,9 @@ class ImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-    val flowers = findViewById<RecyclerView>(R.id.recyclerView)
-    fun getPictures() : Array<ImageObject>{
-        return arrayOf( ImageObject(R.drawable.flower1, "blueberry-ish flower"),
+        val flowers = findViewById<RecyclerView>(R.id.recyclerView) as RecyclerView
+        fun getPictures() : Array<ImageObject>{
+            return arrayOf( ImageObject(R.drawable.flower1, "blueberry-ish flower"),
             ImageObject(R.drawable.flower2, "succulent-ish flower"),
             ImageObject(R.drawable.flower3, "blue jellyfish flower"),
             ImageObject(R.drawable.flower4, "little pink chrysanthemum"),
@@ -28,8 +29,11 @@ class ImageActivity : AppCompatActivity() {
             ImageObject(R.drawable.flower15, "purple cat-tails"),
             ImageObject(R.drawable.flower16, "blue lantern flower"),
         )
-    }
+        }
+        val adapter = ImageAdapter(this, getPictures())
         flowers.adapter = ImageAdapter(this, getPictures())
+        flowers.layoutManager = GridLayoutManager(this, 4)
+
 
     }
 }

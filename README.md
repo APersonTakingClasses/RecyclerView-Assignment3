@@ -1,8 +1,6 @@
-# RecyclerView-Assignment3
+# RecyclerView-Assignment4
 
-Instructions: Create an application that allows a user to select an image from a RecyclerView and
-once selected, display the selected image inside the main activity.
+Modify Assignment 3
 
-Uses: dependency injection
-      generics
-      recycler views
+Uses two activities to display a selection screen and a close-up screen
+app has a custom icon and title on menu
